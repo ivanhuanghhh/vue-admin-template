@@ -4,6 +4,7 @@ import Login from '../pages/login/Login'
 import Layout from '../pages/layout/Layout'
 import HelloWorld from '../components/HelloWorld'
 import UserList from '../pages/user/UserList'
+import NotFound from '../pages/404'
 import store from '../store'
 
 Vue.use(Router)
@@ -17,6 +18,7 @@ export const asyncRouterMap = [
 // meta.hidden 表示是否在侧边栏显示
 export const routes = [
   { path: '/login', name: 'Login', component: Login, meta: { hidden: true } },
+  { path: '/404', name: '404', component: NotFound, meta: { hidden: true } },
 
   {
     path: '/',
@@ -55,6 +57,14 @@ export const routes = [
         hidden: true
       },
     }]
+  },
+
+  {
+    path: '*',
+    redirect: '/404',
+    meta: {
+      hidden: true
+    }
   }
 ]
 

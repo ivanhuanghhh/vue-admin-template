@@ -26,9 +26,7 @@ const session = {
             })
         },
         logout({ commit }) {
-            return logout().then(data => {
-                commit('logout')
-            })
+            return logout().then(() => commit('logout'), () => commit('logout'))
         }
     }
 }
