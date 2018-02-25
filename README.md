@@ -8,12 +8,11 @@
 - axios
 
 ## Build Setup
-
+在`src/config/env.js`修改`BASE_URL`以及...
 ``` bash
 # install dependencies
 npm install
 
-# 在 src/config/env.js 修改BASE_URL
 npm run dev
 
 # build for production with minification
