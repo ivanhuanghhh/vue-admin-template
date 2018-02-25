@@ -25,7 +25,7 @@
         v-if="!child.meta.hidden" 
         :key="child.meta.name" 
         :index="concatPath(item, child)">
-          {{ child.meta.name }}
+          \{{ child.meta.name }}
         </el-menu-item>
       </el-submenu>
     </template>
