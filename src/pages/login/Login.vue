@@ -41,8 +41,8 @@ export default {
     };
     return {
       loginForm: {
-        cellphone: "13288215971",
-        password: "123456"
+        cellphone: "",
+        password: ""
       },
       loginRules: {
         cellphone: [
@@ -82,7 +82,12 @@ $light_gray: #eee;
 }
 
 .login-container {
-  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
   background-color: $bg;
   input:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px #293444 inset !important;

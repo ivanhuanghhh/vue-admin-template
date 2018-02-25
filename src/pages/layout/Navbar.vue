@@ -1,23 +1,18 @@
 <template>
 <el-menu class="navbar" mode="horizontal">
-  <span class="nav-title">云装惠尚后台管理</span>
-  <el-dropdown class="avatar-container">
-    <div class="avatar-wrapper">
-      <img class="user-avatar" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1121475478,2545730346&fm=27&gp=0.jpg">
+  <div class="menu-container">
+    <router-link class="noti-btn" to="/">
+      <i class="el-icon-bell"></i>
+      <span>通知</span>
+    </router-link>
+   
+    <img class="user-avatar" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1121475478,2545730346&fm=27&gp=0.jpg">
+    <div class="user-info">
       <span class="user-name">{{ user.name }}</span>
-      <i class="el-icon-caret-bottom"></i>
+      <span class="logout" @click.prevent="handleLogout">退出</span>
     </div>
-    <el-dropdown-menu class="user-dropdown" slot="dropdown">
-       <router-link to="/">
-        <el-dropdown-item>
-            首页  
-        </el-dropdown-item>
-        </router-link>
-      <el-dropdown-item divided>
-        <span @click="handleLogout" style="display:block;">退出</span>
-      </el-dropdown-item>
-    </el-dropdown-menu>
-  </el-dropdown>
+  
+  </div>
 </el-menu>
 </template>
 
@@ -45,48 +40,53 @@ export default {
 
 <style rel="stylesheet/scss" lang="scss">
 .navbar {
-  height: 50px;
-  line-height: 50px;
+  height: 68px;
   border-radius: 0px !important;
   .nav-title {
     margin-left: 30px;
     font-size: 20px;
   }
-  .avatar-container {
-    height: 50px;
-    display: inline-block;
+  .menu-container {
     position: absolute;
-    right: 35px;
-    .avatar-wrapper {
-      cursor: pointer;
-      margin-top: 5px;
-      position: relative;
-      .user-avatar {
+    right: 45px;
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    font-size: 14px;    
+    align-items: center;
+    &:focus {
+      outline: none;
+    }
+    .noti-btn {
+      &:visited {
+        color: inherit;
+      }
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-right: 30px;
+    }
+    
+    .user-avatar {
         width: 40px;
         height: 40px;
-        border-radius: 10px;
+        margin-right: 10px;
+        border-radius: 50%;
       }
-      .user-name {
-        font-size: 18px;
-      }
-      .el-icon-caret-bottom {
-        position: absolute;
-        right: -20px;
-        top: 25px;
-        font-size: 12px;
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      .logout {
+        cursor: pointer;
+        color: #CCCCCC;
       }
     }
   }
+  
+  
 }
-.user-dropdown {
-  a,
-  a:visited,
-  a:hover,
-  a:active {
-    color: inherit;
-    text-decoration: none;
-  }
-}
+
 </style>
 
 

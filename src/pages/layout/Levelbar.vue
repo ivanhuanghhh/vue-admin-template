@@ -39,7 +39,8 @@ export default {
 
 <style lang="scss">
   .levelbar-container {
-    padding: 24px;
+    padding: 20px;
+    background: #f9f9f9;
   }
 </style>
 

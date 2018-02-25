@@ -6,9 +6,8 @@
 
       </div>
   </div>
-
-
 </template>
+
 <script>
 import Levelbar from './Levelbar'
 export default {
@@ -23,7 +22,7 @@ export default {
   .app-main-container {
 
     .page-container {
-      padding: 20px;
+      padding: 10px 20px;
     }
   }
   
